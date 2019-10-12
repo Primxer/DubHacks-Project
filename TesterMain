@@ -6,4 +6,3 @@ ret, image = cam.read()
 if ret:
     cv2.imshow('SnapshotTest', image)
     cv2.waitKey(0)
-    cv2
