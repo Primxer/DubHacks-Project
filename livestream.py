@@ -2,17 +2,23 @@
 import numpy as np
 import cv2
 
-cap = cv2.VideoCapture(0)
 
-while True:
-    ret, frame = cap.read()
+def livestream():
+    cap = cv2.VideoCapture(0)
 
-    if ret:
-        cv2.imshow('frame', frame)
+    while True:
+        ret, frame = cap.read()
 
-    # Exit when Q is hit.
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
+        if ret:
+            cv2.imshow('frame', frame)
 
-cap.release()
-cv2.destroyAllWindows()
+        # Exit when Q is hit.
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+
+    cap.release()
+    cv2.destroyAllWindows()
+
+
+if __name__ == '__main__':
+    livestream()
